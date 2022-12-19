@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Gerador de Assinatura</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="apple-icon-57x57.ico">
+
+</head>
+
+<body>
+
+	<section class="form-container">
+		<div class="container">
+			<form action="gerar.php">
+				<h1>Assinatura de e-mail</h1>
+				<p>Preencha os campos de forma correta</p>
+				<div class="input-single">
+					<input class="input" type="text" name="texto1" id="texto1" required autocomplete="OFF" require>
+					<label for="texto1">Nome:</label>
+				</div>
+				<div class="input-single">
+					<input class="input" type="text" name="texto2" id="texto2" required autocomplete="OFF" require>
+					<label for="texto2">Cargo:</label>
+				</div>
+				<div class="label-float">
+					<input type="text" name="texto3" id="texto3" required autocomplete="OFF" require
+						oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
+						maxlength="4" placeholder="a" />
+					<label for="texto3">Ramal:</label>
+				</div>
+				<div class="label-float">
+					<input class="input" type="tel" name="texto4" id="texto4" autocomplete="OFF" data-js="phone"
+						maxlength="14" placeholder="a" />
+					<label for="texto4">Celular:</label>
+				</div>
+				<div class="label-float">
+					<input class="input" type="email" name="texto5" id="texto5" placeholder="a" required
+						autocomplete="OFF" require />
+					<label for="texto5">E-mail:</label>
+				</div>
+				<br>
+				<div class="butt"><input type="submit" value="Gerar"></div>
+
+		</div>
+		</form>
+	</section>
+</body>
+
+<script>
+	const formato = {
+
+		phone(value) {
+
+			return value
+
+				.replace(/\D/g, '')
+
+				.replace(/(\d{2})(\d)/, '($1)$2')
+
+				.replace(/(\d{4})(\d)/, '$1-$2')
+
+				.replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+
+				.replace(/(-\d{4})\d+?$/, '$1')
+
+		}
+
+	}
+
+
+
+	document.querySelectorAll('input').forEach(($input) => {
+
+		const field = $input.dataset.js
+
+		$input.addEventListener('input', (e) => {
+
+			e.target.value = formato[field](e.target.value)
+
+		}, false)
+
+	})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
