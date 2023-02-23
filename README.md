@@ -97,7 +97,7 @@ $y7 = 121;
 
 ![image](https://user-images.githubusercontent.com/82044329/220797550-099e5bd7-e3d5-42f5-89ea-1883bb1b0631.png)
 
-![image](https://user-images.githubusercontent.com/82044329/220797915-6cb8f651-73a6-4d28-ba9d-bde0005067df.png)
+![image](https://user-images.githubusercontent.com/82044329/220798041-95e76280-f393-4ba3-ad65-ab8042752ece.png)
 
 
 
